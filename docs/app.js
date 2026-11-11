@@ -1,10 +1,38 @@
 const defaults={demand:15000,oil:1.05,energy:10.35,eff:85,electric:0.30,cop:3.2,gas:0.10,gasEff:90,standing:150,pellet:0.075,pelletEff:85,water:2500,solar:60,pump:60,oilMaint:120,hpMaint:150,gasMaint:120,pelletMaint:200,solarMaint:80,install:[0,11000,3500,6500,4500]};
-const groups=[['Home & oil',[['demand','Useful heat demand (kWh/year)',1,100000,100],['oil','Delivered oil (€/litre)',.01,10,.01],['energy','Oil energy (kWh/litre)',1,20,.01],['eff','Boiler efficiency (%)',1,100,1],['oilMaint','Oil maintenance (€/year)',0,10000,10]]],['Electricity & heat pump',[['electric','Electricity (€/kWh)',.01,5,.01],['cop','Seasonal COP',1,7,.1],['hpMaint','Heat pump maintenance (€/year)',0,10000,10]]],['Gas & pellets',[['gas','Gas (€/kWh fuel)',.001,5,.001],['gasEff','Gas efficiency (%)',1,100,1],['standing','Gas standing charge (€/year)',0,10000,10],['gasMaint','Gas maintenance (€/year)',0,10000,10],['pellet','Pellets (€/kWh fuel)',.001,5,.001],['pelletEff','Pellet efficiency (%)',1,100,1],['pelletMaint','Pellet maintenance (€/year)',0,10000,10]]],['Solar thermal + oil',[['water','Hot-water demand (kWh/year)',0,100000,100],['solar','Solar share of hot water (%)',0,100,1],['pump','Solar pump electricity (kWh/year)',0,10000,10],['solarMaint','Solar maintenance (€/year)',0,10000,10]]]];
+const groups=[['Home & oil',[['demand','Useful heat demand (kWh/year)',1,100000,1],['oil','Delivered oil (€/litre)',.01,10,.01],['energy','Oil energy (kWh/litre)',1,20,.01],['eff','Boiler efficiency (%)',1,100,1],['oilMaint','Oil maintenance (€/year)',0,10000,10]]],['Electricity & heat pump',[['electric','Electricity (€/kWh)',.01,5,.01],['cop','Seasonal COP',1,7,.1],['hpMaint','Heat pump maintenance (€/year)',0,10000,10]]],['Gas & pellets',[['gas','Gas (€/kWh fuel)',.001,5,.001],['gasEff','Gas efficiency (%)',1,100,1],['standing','Gas standing charge (€/year)',0,10000,10],['gasMaint','Gas maintenance (€/year)',0,10000,10],['pellet','Pellets (€/kWh fuel)',.001,5,.001],['pelletEff','Pellet efficiency (%)',1,100,1],['pelletMaint','Pellet maintenance (€/year)',0,10000,10]]],['Solar thermal + oil',[['water','Hot-water demand (kWh/year)',0,100000,100],['solar','Solar share of hot water (%)',0,100,1],['pump','Solar pump electricity (kWh/year)',0,10000,10],['solarMaint','Solar maintenance (€/year)',0,10000,10]]]];
 let storageOK=true;function read(k,d){try{return JSON.parse(localStorage.getItem(k))||d}catch{return d}}let state={...defaults,...read('heatwise-settings',{} )};state.install=Array.isArray(state.install)&&state.install.length===5?state.install:defaults.install.slice();let quotes=read('heatwise-quotes',[]);if(!Array.isArray(quotes))quotes=[];
 function save(){try{localStorage.setItem('heatwise-settings',JSON.stringify(state));localStorage.setItem('heatwise-quotes',JSON.stringify(quotes))}catch{storageOK=false;document.querySelector('.local').textContent='Storage unavailable';toast('Browser storage unavailable. Export to keep your data.')}}
 const money=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);const names=['Heating oil','Heat pump','Mains gas','Wood pellets','Solar thermal + oil'];
 function calculate(s){let unit=s.oil/(s.energy*s.eff/100),offset=Math.min(s.demand,s.water*s.solar/100);return [s.demand*unit+s.oilMaint,s.demand/s.cop*s.electric+s.hpMaint,s.demand/(s.gasEff/100)*s.gas+s.standing+s.gasMaint,s.demand/(s.pelletEff/100)*s.pellet+s.pelletMaint,(s.demand-offset)*unit+s.oilMaint+s.solarMaint+s.pump*s.electric]}
-function fields(){document.querySelector('#fields').innerHTML=groups.map(([title,fs])=>`<div class="field-group">${title}</div>`+fs.map(([id,label,min,max,step])=>`<label>${label}<input aria-label="${label}" id="f-${id}" type="number" min="${min}" max="${max}" step="${id === 'oil' ? 'any' : benchmarks[id] ? 0.0001 : step}" value="${state[id]}" required></label>${benchmarkControl(id)}`).join('')).join('');groups.flatMap(g=>g[1]).forEach(([id])=>document.querySelector('#f-'+id).addEventListener('input',e=>{if(e.target.checkValidity()){state[id]=Number(e.target.value);save();render()}}))}
+function fields() {
+  document.querySelector('#fields').innerHTML = groups.map(([title, inputs]) =>
+    `<div class="field-group">${title}</div>` + inputs.map(([id, label, min, max, step]) => {
+      const inputStep = id === 'oil' ? 'any' : benchmarks[id] ? 0.0001 : step;
+      const demandHelp = id === 'demand' ? ' aria-describedby="demand-feedback"' : '';
+      const feedback = id === 'demand' ? '<p id="demand-feedback" role="status"></p>' : '';
+      return `<label>${label}<input aria-label="${label}" id="f-${id}" type="number"
+        min="${min}" max="${max}" step="${inputStep}" value="${state[id]}" required${demandHelp}></label>
+        ${feedback}${benchmarkControl(id)}`;
+    }).join('')
+  ).join('');
+
+  for (const [id] of groups.flatMap(([, inputs]) => inputs)) {
+    const input = document.querySelector('#f-' + id);
+    input.addEventListener('input', () => {
+      const valid = input.checkValidity();
+      if (id === 'demand') {
+        const feedback = document.querySelector('#demand-feedback');
+        input.setAttribute('aria-invalid', String(!valid));
+        feedback.textContent = valid ? '' :
+          `Enter a whole number from 1 to 100,000 kWh. Results still use ${state.demand.toLocaleString('en-IE')} kWh.`;
+      }
+      if (!valid) return;
+      state[id] = Number(input.value);
+      save();
+      render();
+    });
+  }
+}
 function render(){renderUpgradeDecision();document.dispatchEvent(new Event("heatwise:comparison-updated"));const costs=calculate(state),lowest=Math.min(...costs),best=costs.indexOf(lowest),max=Math.max(...costs);document.querySelector('#heat').textContent=state.demand.toLocaleString('en-IE')+' kWh';document.querySelector('#baseline').textContent=money(costs[0]);document.querySelector('#winner').textContent=names[best];document.querySelector('#saving').textContent=money(costs[0]-lowest)+' / year below oil';document.querySelector('#bars').innerHTML=costs.map((v,i)=>`<div class="bar-row"><span>${names[i]}</span><div class="track"><div class="bar ${i===0?'oil':i===best?'best':''}" style="width:${v/max*100}%"></div></div><strong>${money(v)}</strong></div>`).join('');document.querySelector('#table').innerHTML=costs.map((v,i)=>`<tr><td>${names[i]}</td><td>${i===0?'Existing system':`<input aria-label="Net installation cost for ${names[i]}" type="number" min="0" max="1000000" step="1" data-install="${i}" value="${state.install[i]}">`}</td><td>${money(v)}</td><td>${i===0?'Baseline':costs[0]>v?(state.install[i]/(costs[0]-v)).toFixed(1)+' yrs':'No saving'}</td><td>${money(state.install[i]+15*v)}</td></tr>`).join('');document.querySelectorAll('[data-install]').forEach(el=>el.addEventListener('change',e=>{if(e.target.checkValidity()&&e.target.value!==''){state.install[+e.target.dataset.install]=+e.target.value;save();render()}}))}
 function toast(t){const el=document.querySelector('#toast');el.textContent=t;el.style.display='block';setTimeout(()=>el.style.display='none',3000)}
 function esc(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
