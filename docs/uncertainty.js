@@ -45,4 +45,4 @@ function renderUncertainty() {
 
 uncertainty.addEventListener('toggle', renderUncertainty);
 uncertainty.addEventListener('input', renderUncertainty);
-document.addEventListener('heatwise:comparison-updated', renderUncertainty);
+document.addEventListener('heatspend-ireland:comparison-updated', renderUncertainty);
