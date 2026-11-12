@@ -18,7 +18,24 @@
   <main>
     <h1>Home heating oil prices in Ireland</h1>
     <p>Check a national kerosene benchmark, then look up delivered prices for your county and order size.</p>
-    <section class="panel" aria-labelledby="benchmark-title">
+    <section class="panel table-wrap" aria-labelledby="supplier-title">
+      <h2 id="supplier-title">Prices from suppliers</h2>
+      <label>Order size
+        <select id="oil-volume">
+          <option value="300">300 litres</option>
+          <option value="500" selected>500 litres</option>
+          <option value="1000">1,000 litres</option>
+        </select>
+      </label>
+      <p id="supplier-status" role="status">Loading supplier prices…</p>
+      <table>
+        <thead><tr><th scope="col">Supplier</th><th scope="col">Delivery area</th><th scope="col">Listed total</th><th scope="col">Price per litre</th><th scope="col">Last checked (Irish time)</th></tr></thead>
+        <tbody id="supplier-prices"></tbody>
+      </table>
+      <p class="muted">Prices come from public supplier listings for the exact volume shown. Coverage varies by address. Confirm VAT, delivery fees and the final price with the supplier. Older listings are marked after 30 hours.</p>
+      <noscript>Enable JavaScript to view the supplier table, or use the comparison links below.</noscript>
+    </section>
+    <section class="panel index-panel" aria-labelledby="benchmark-title">
       <h2 id="benchmark-title">National kerosene benchmark</h2>
       <p>SEAI domestic fuel comparison, <time datetime="2026-10-01">1 October 2026</time>. Figures are for 1,000 litres delivered, including VAT.</p>
       <div class="metrics">
@@ -39,5 +56,6 @@
       <a href="./#tracker">Log a delivered quote in Heatspend Ireland ↗</a>
     </section>
   </main>
+  <script src="supplier-prices.js" defer></script>
 </body>
 </html>
