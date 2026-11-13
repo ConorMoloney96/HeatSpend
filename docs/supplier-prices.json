@@ -5,7 +5,7 @@
     "source": "https://dublinoil.ie/",
     "litres": 300,
     "total": 495.0,
-    "checked": "2026-11-12T22:17:28+00:00"
+    "checked": "2026-11-13T11:34:59+00:00"
   },
   {
     "provider": "Dublin Oil",
@@ -13,7 +13,7 @@
     "source": "https://dublinoil.ie/",
     "litres": 500,
     "total": 790.0,
-    "checked": "2026-11-12T22:17:28+00:00"
+    "checked": "2026-11-13T11:34:59+00:00"
   },
   {
     "provider": "Dublin Oil",
@@ -21,7 +21,7 @@
     "source": "https://dublinoil.ie/",
     "litres": 1000,
     "total": 1540.0,
-    "checked": "2026-11-12T22:17:28+00:00"
+    "checked": "2026-11-13T11:34:59+00:00"
   },
   {
     "provider": "Duffy Oils",
@@ -29,7 +29,7 @@
     "source": "https://duffyoils.ie/",
     "litres": 300,
     "total": 495.0,
-    "checked": "2026-11-12T22:17:34+00:00"
+    "checked": "2026-11-13T11:35:00+00:00"
   },
   {
     "provider": "Duffy Oils",
@@ -37,7 +37,7 @@
     "source": "https://duffyoils.ie/",
     "litres": 500,
     "total": 785.0,
-    "checked": "2026-11-12T22:17:34+00:00"
+    "checked": "2026-11-13T11:35:00+00:00"
   },
   {
     "provider": "Duffy Oils",
@@ -45,7 +45,7 @@
     "source": "https://duffyoils.ie/",
     "litres": 1000,
     "total": 1525.0,
-    "checked": "2026-11-12T22:17:34+00:00"
+    "checked": "2026-11-13T11:35:00+00:00"
   },
   {
     "provider": "KFS Oils",
@@ -53,7 +53,7 @@
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 300,
     "total": 487.0,
-    "checked": "2026-11-12T22:17:39+00:00"
+    "checked": "2026-11-13T11:35:02+00:00"
   },
   {
     "provider": "KFS Oils",
@@ -61,7 +61,7 @@
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 500,
     "total": 784.0,
-    "checked": "2026-11-12T22:17:39+00:00"
+    "checked": "2026-11-13T11:35:02+00:00"
   },
   {
     "provider": "KFS Oils",
@@ -69,6 +69,6 @@
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 1000,
     "total": 1584.0,
-    "checked": "2026-11-12T22:17:39+00:00"
+    "checked": "2026-11-13T11:35:02+00:00"
   }
 ]
