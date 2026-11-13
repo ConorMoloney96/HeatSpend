@@ -33,6 +33,27 @@ def parse_prices(provider, html):
         )
         return {int(litres): float(euros.replace(",", "") + cents) for litres, euros, cents in matches}
 
+    if provider in {"Bective Oil", "Coyle Fuels"}:
+        price_markup = (
+            r'<span class="woocommerce-Price-amount amount"><bdi>'
+            r'<span class="woocommerce-Price-currencySymbol"[^>]*>&euro;</span>'
+            r'([\d,]+\.\d{2})</bdi>'
+        )
+        if provider == "Bective Oil":
+            pattern = r'<h2\b[^>]*>(\d+) Litres</h2>\s*<div data-block-name="woocommerce/product-price"[^>]*>\s*<div[^>]*>\s*'
+        else:
+            pattern = r'<div>(\d+)</div>\s*<div><span class="price">'
+        matches = re.findall(pattern + price_markup, html)
+        return {int(litres): float(price.replace(",", "")) for litres, price in matches}
+    if provider == "Cosyhome Fuels":
+        matches = re.findall(
+            r'<div id="qty[a-z]+">(\d+)L<span id="qty_title">Home<br\s*/?>Heating Oil</span></div>'
+            r'<div id="prc"><span class="superscript">&euro;</span>([\d,]+)'
+            r'<span class="superscript">(\.\d{2})</span>',
+            html,
+        )
+        return {int(litres): float(euros.replace(",", "") + cents) for litres, euros, cents in matches}
+
     parser = ProductTags()
     parser.feed(html)
     prices = {}
@@ -45,6 +66,9 @@ def parse_prices(provider, html):
 
 def main():
     providers = [
+        ("Bective Oil", "Selected towns in Meath", "https://bectiveoil.ie/"),
+        ("Coyle Fuels", "Inishowen and Donegal", "https://coylefuels.com/"),
+        ("Cosyhome Fuels", "County Donegal", "https://cosyhomefuels.com/"),
         ("Dublin Oil", "County Dublin", "https://dublinoil.ie/"),
         ("Duffy Oils", "Parts of Louth, Cavan and Monaghan", "https://duffyoils.ie/"),
         ("KFS Oils", "County Wexford", "https://www.kfsoils.ie/all-products/"),
@@ -57,13 +81,14 @@ def main():
             request = Request(source, headers={"User-Agent": "HeatSpend public price checker/1.0"})
             with urlopen(request, timeout=20) as response:
                 prices = parse_prices(provider, response.read().decode("utf-8", errors="replace"))
-            if any(not 0.3 <= prices.get(litres, 0) / litres <= 5 for litres in VOLUMES):
-                raise ValueError("Expected three plausible prices for the listed quantities")
+            available = [litres for litres in VOLUMES if 0.3 <= prices.get(litres, 0) / litres <= 5]
+            if not available:
+                raise ValueError("No supported order size had a plausible price")
             checked = datetime.now(timezone.utc).isoformat(timespec="seconds")
             rows.extend(dict(provider=provider, area=area, source=source, litres=litres,
-                             total=prices[litres], checked=checked) for litres in VOLUMES)
+                             total=prices[litres], checked=checked) for litres in available)
             successes += 1
-            print(f"{provider}: {[(litres, prices[litres]) for litres in VOLUMES]}")
+            print(f"{provider}: {[(litres, prices[litres]) for litres in available]}")
         except Exception as error:
             print(f"{provider}: {error}")
             rows.extend(row for row in previous if row["provider"] == provider)
