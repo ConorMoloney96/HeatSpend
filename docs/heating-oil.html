@@ -6,6 +6,20 @@
   <meta name="description" content="Find Irish home heating oil price benchmarks and compare delivered kerosene quotes by county.">
   <title>Home heating oil prices in Ireland | HeatSpend Ireland</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .quote-cta {
+      display: inline-block;
+      box-sizing: border-box;
+      width: auto;
+      max-width: 100%;
+      margin: 0 0 0.75rem;
+      padding: 0.8rem 1.15rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .quote-cta:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  </style>
 </head>
 <body>
   <header>
@@ -18,6 +32,7 @@
   <main>
     <h1>Home heating oil prices in Ireland</h1>
     <p>Check a national kerosene benchmark, then look up delivered prices for your county and order size.</p>
+    <p><a class="primary quote-cta" href="./#tracker">Log a delivered quote in HeatSpend Ireland ↗</a></p>
     <section class="panel table-wrap" aria-labelledby="supplier-title">
       <h2 id="supplier-title">Prices from suppliers</h2>
       <label>Order size
@@ -53,7 +68,6 @@
         <li><a href="https://www.cheapestoil.ie/heating-oil-prices/republic">CheapestOil.ie county prices ↗</a></li>
       </ul>
       <p>Once you have a quote, enter its litres and total delivered price in HeatSpend Ireland to calculate the cost per litre and see how it affects upgrade payback.</p>
-      <a href="./#tracker">Log a delivered quote in HeatSpend Ireland ↗</a>
     </section>
   </main>
   <script src="supplier-prices.js" defer></script>
