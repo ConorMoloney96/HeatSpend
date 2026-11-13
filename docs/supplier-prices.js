@@ -38,15 +38,22 @@ function renderPrices() {
 }
 
 async function loadPrices() {
-  try {
-    prices = await getPrices(latestData);
-  } catch {
-    try {
-      prices = await getPrices('supplier-prices.json');
-    } catch {
-      status.textContent = 'Supplier prices could not load. Use the source links below to check recent prices.';
-      return;
+  const snapshots = await Promise.allSettled([
+    getPrices('supplier-prices.json'),
+    getPrices(latestData)
+  ]);
+  let newestCheck = 0;
+  for (const snapshot of snapshots) {
+    if (snapshot.status !== 'fulfilled') continue;
+    const checked = Math.max(...snapshot.value.map(row => Date.parse(row.checked)));
+    if (checked > newestCheck) {
+      newestCheck = checked;
+      prices = snapshot.value;
     }
+  }
+  if (!prices.length) {
+    status.textContent = 'Supplier prices could not load. Use the source links below to check recent prices.';
+    return;
   }
   renderPrices();
 }
