@@ -5,7 +5,7 @@
     "source": "https://bectiveoil.ie/",
     "litres": 300,
     "total": 450.0,
-    "checked": "2026-11-16T17:10:56+00:00"
+    "checked": "2026-11-17T16:57:26+00:00"
   },
   {
     "provider": "Bective Oil",
@@ -13,7 +13,7 @@
     "source": "https://bectiveoil.ie/",
     "litres": 500,
     "total": 723.0,
-    "checked": "2026-11-16T17:10:56+00:00"
+    "checked": "2026-11-17T16:57:26+00:00"
   },
   {
     "provider": "Bective Oil",
@@ -21,31 +21,31 @@
     "source": "https://bectiveoil.ie/",
     "litres": 1000,
     "total": 1420.0,
-    "checked": "2026-11-16T17:10:56+00:00"
+    "checked": "2026-11-17T16:57:26+00:00"
   },
   {
     "provider": "Coyle Fuels",
     "area": "Inishowen and Donegal",
     "source": "https://coylefuels.com/",
     "litres": 300,
-    "total": 475.0,
-    "checked": "2026-11-16T17:10:57+00:00"
+    "total": 455.0,
+    "checked": "2026-11-17T16:57:27+00:00"
   },
   {
     "provider": "Coyle Fuels",
     "area": "Inishowen and Donegal",
     "source": "https://coylefuels.com/",
     "litres": 500,
-    "total": 750.0,
-    "checked": "2026-11-16T17:10:57+00:00"
+    "total": 745.0,
+    "checked": "2026-11-17T16:57:27+00:00"
   },
   {
     "provider": "Coyle Fuels",
     "area": "Inishowen and Donegal",
     "source": "https://coylefuels.com/",
     "litres": 1000,
-    "total": 1445.0,
-    "checked": "2026-11-16T17:10:57+00:00"
+    "total": 1440.0,
+    "checked": "2026-11-17T16:57:27+00:00"
   },
   {
     "provider": "Cosyhome Fuels",
@@ -53,7 +53,7 @@
     "source": "https://cosyhomefuels.com/",
     "litres": 300,
     "total": 455.0,
-    "checked": "2026-11-16T17:10:57+00:00"
+    "checked": "2026-11-17T16:57:28+00:00"
   },
   {
     "provider": "Cosyhome Fuels",
@@ -61,7 +61,7 @@
     "source": "https://cosyhomefuels.com/",
     "litres": 1000,
     "total": 1440.0,
-    "checked": "2026-11-16T17:10:57+00:00"
+    "checked": "2026-11-17T16:57:28+00:00"
   },
   {
     "provider": "Dublin Oil",
@@ -69,7 +69,7 @@
     "source": "https://dublinoil.ie/",
     "litres": 300,
     "total": 495.0,
-    "checked": "2026-11-16T17:10:59+00:00"
+    "checked": "2026-11-17T16:57:29+00:00"
   },
   {
     "provider": "Dublin Oil",
@@ -77,7 +77,7 @@
     "source": "https://dublinoil.ie/",
     "litres": 500,
     "total": 790.0,
-    "checked": "2026-11-16T17:10:59+00:00"
+    "checked": "2026-11-17T16:57:29+00:00"
   },
   {
     "provider": "Dublin Oil",
@@ -85,7 +85,7 @@
     "source": "https://dublinoil.ie/",
     "litres": 1000,
     "total": 1540.0,
-    "checked": "2026-11-16T17:10:59+00:00"
+    "checked": "2026-11-17T16:57:29+00:00"
   },
   {
     "provider": "Duffy Oils",
@@ -93,7 +93,7 @@
     "source": "https://duffyoils.ie/",
     "litres": 300,
     "total": 475.0,
-    "checked": "2026-11-16T17:11:00+00:00"
+    "checked": "2026-11-17T16:57:30+00:00"
   },
   {
     "provider": "Duffy Oils",
@@ -101,7 +101,7 @@
     "source": "https://duffyoils.ie/",
     "litres": 500,
     "total": 750.0,
-    "checked": "2026-11-16T17:11:00+00:00"
+    "checked": "2026-11-17T16:57:30+00:00"
   },
   {
     "provider": "Duffy Oils",
@@ -109,7 +109,7 @@
     "source": "https://duffyoils.ie/",
     "litres": 1000,
     "total": 1455.0,
-    "checked": "2026-11-16T17:11:00+00:00"
+    "checked": "2026-11-17T16:57:30+00:00"
   },
   {
     "provider": "KFS Oils",
@@ -117,7 +117,7 @@
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 300,
     "total": 487.0,
-    "checked": "2026-11-16T17:11:01+00:00"
+    "checked": "2026-11-17T16:57:32+00:00"
   },
   {
     "provider": "KFS Oils",
@@ -125,7 +125,7 @@
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 500,
     "total": 784.0,
-    "checked": "2026-11-16T17:11:01+00:00"
+    "checked": "2026-11-17T16:57:32+00:00"
   },
   {
     "provider": "KFS Oils",
@@ -133,6 +133,6 @@
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 1000,
     "total": 1584.0,
-    "checked": "2026-11-16T17:11:01+00:00"
+    "checked": "2026-11-17T16:57:32+00:00"
   }
 ]
