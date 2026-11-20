@@ -5,7 +5,7 @@
     "source": "https://bectiveoil.ie/",
     "litres": 300,
     "total": 440.0,
-    "checked": "2026-11-19T16:39:20+00:00"
+    "checked": "2026-11-20T16:15:03+00:00"
   },
   {
     "provider": "Bective Oil",
@@ -13,7 +13,7 @@
     "source": "https://bectiveoil.ie/",
     "litres": 500,
     "total": 715.0,
-    "checked": "2026-11-19T16:39:20+00:00"
+    "checked": "2026-11-20T16:15:03+00:00"
   },
   {
     "provider": "Bective Oil",
@@ -21,7 +21,7 @@
     "source": "https://bectiveoil.ie/",
     "litres": 1000,
     "total": 1415.0,
-    "checked": "2026-11-19T16:39:20+00:00"
+    "checked": "2026-11-20T16:15:03+00:00"
   },
   {
     "provider": "Coyle Fuels",
@@ -29,23 +29,23 @@
     "source": "https://coylefuels.com/",
     "litres": 300,
     "total": 455.0,
-    "checked": "2026-11-19T16:39:20+00:00"
+    "checked": "2026-11-20T16:15:04+00:00"
   },
   {
     "provider": "Coyle Fuels",
     "area": "Inishowen and Donegal",
     "source": "https://coylefuels.com/",
     "litres": 500,
-    "total": 735.0,
-    "checked": "2026-11-19T16:39:20+00:00"
+    "total": 725.0,
+    "checked": "2026-11-20T16:15:04+00:00"
   },
   {
     "provider": "Coyle Fuels",
     "area": "Inishowen and Donegal",
     "source": "https://coylefuels.com/",
     "litres": 1000,
-    "total": 1440.0,
-    "checked": "2026-11-19T16:39:20+00:00"
+    "total": 1420.0,
+    "checked": "2026-11-20T16:15:04+00:00"
   },
   {
     "provider": "Cosyhome Fuels",
@@ -53,7 +53,7 @@
     "source": "https://cosyhomefuels.com/",
     "litres": 300,
     "total": 455.0,
-    "checked": "2026-11-19T16:39:21+00:00"
+    "checked": "2026-11-20T16:15:05+00:00"
   },
   {
     "provider": "Cosyhome Fuels",
@@ -61,31 +61,31 @@
     "source": "https://cosyhomefuels.com/",
     "litres": 1000,
     "total": 1440.0,
-    "checked": "2026-11-19T16:39:21+00:00"
+    "checked": "2026-11-20T16:15:05+00:00"
   },
   {
     "provider": "Dublin Oil",
     "area": "County Dublin",
     "source": "https://dublinoil.ie/",
     "litres": 300,
-    "total": 475.0,
-    "checked": "2026-11-19T16:39:23+00:00"
+    "total": 470.0,
+    "checked": "2026-11-20T16:15:06+00:00"
   },
   {
     "provider": "Dublin Oil",
     "area": "County Dublin",
     "source": "https://dublinoil.ie/",
     "litres": 500,
-    "total": 765.0,
-    "checked": "2026-11-19T16:39:23+00:00"
+    "total": 750.0,
+    "checked": "2026-11-20T16:15:06+00:00"
   },
   {
     "provider": "Dublin Oil",
     "area": "County Dublin",
     "source": "https://dublinoil.ie/",
     "litres": 1000,
-    "total": 1475.0,
-    "checked": "2026-11-19T16:39:23+00:00"
+    "total": 1440.0,
+    "checked": "2026-11-20T16:15:06+00:00"
   },
   {
     "provider": "Duffy Oils",
@@ -93,7 +93,7 @@
     "source": "https://duffyoils.ie/",
     "litres": 300,
     "total": 475.0,
-    "checked": "2026-11-19T16:39:23+00:00"
+    "checked": "2026-11-20T16:15:07+00:00"
   },
   {
     "provider": "Duffy Oils",
@@ -101,7 +101,7 @@
     "source": "https://duffyoils.ie/",
     "litres": 500,
     "total": 750.0,
-    "checked": "2026-11-19T16:39:23+00:00"
+    "checked": "2026-11-20T16:15:07+00:00"
   },
   {
     "provider": "Duffy Oils",
@@ -109,7 +109,7 @@
     "source": "https://duffyoils.ie/",
     "litres": 1000,
     "total": 1455.0,
-    "checked": "2026-11-19T16:39:23+00:00"
+    "checked": "2026-11-20T16:15:07+00:00"
   },
   {
     "provider": "KFS Oils",
@@ -117,7 +117,7 @@
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 300,
     "total": 466.0,
-    "checked": "2026-11-19T16:39:24+00:00"
+    "checked": "2026-11-20T16:15:08+00:00"
   },
   {
     "provider": "KFS Oils",
@@ -125,7 +125,7 @@
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 500,
     "total": 752.0,
-    "checked": "2026-11-19T16:39:24+00:00"
+    "checked": "2026-11-20T16:15:08+00:00"
   },
   {
     "provider": "KFS Oils",
@@ -133,6 +133,6 @@
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 1000,
     "total": 1483.0,
-    "checked": "2026-11-19T16:39:24+00:00"
+    "checked": "2026-11-20T16:15:08+00:00"
   }
 ]
