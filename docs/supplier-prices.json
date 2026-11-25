@@ -4,48 +4,48 @@
     "area": "Selected towns in Meath",
     "source": "https://bectiveoil.ie/",
     "litres": 300,
-    "total": 434.0,
-    "checked": "2026-11-24T18:57:50+00:00"
+    "total": 425.0,
+    "checked": "2026-11-25T18:02:05+00:00"
   },
   {
     "provider": "Bective Oil",
     "area": "Selected towns in Meath",
     "source": "https://bectiveoil.ie/",
     "litres": 500,
-    "total": 704.0,
-    "checked": "2026-11-24T18:57:50+00:00"
+    "total": 685.0,
+    "checked": "2026-11-25T18:02:05+00:00"
   },
   {
     "provider": "Bective Oil",
     "area": "Selected towns in Meath",
     "source": "https://bectiveoil.ie/",
     "litres": 1000,
-    "total": 1335.0,
-    "checked": "2026-11-24T18:57:50+00:00"
+    "total": 1320.0,
+    "checked": "2026-11-25T18:02:05+00:00"
   },
   {
     "provider": "Coyle Fuels",
     "area": "Inishowen and Donegal",
     "source": "https://coylefuels.com/",
     "litres": 300,
-    "total": 455.0,
-    "checked": "2026-11-24T18:57:51+00:00"
+    "total": 445.0,
+    "checked": "2026-11-25T18:02:06+00:00"
   },
   {
     "provider": "Coyle Fuels",
     "area": "Inishowen and Donegal",
     "source": "https://coylefuels.com/",
     "litres": 500,
-    "total": 725.0,
-    "checked": "2026-11-24T18:57:51+00:00"
+    "total": 695.0,
+    "checked": "2026-11-25T18:02:06+00:00"
   },
   {
     "provider": "Coyle Fuels",
     "area": "Inishowen and Donegal",
     "source": "https://coylefuels.com/",
     "litres": 1000,
-    "total": 1420.0,
-    "checked": "2026-11-24T18:57:51+00:00"
+    "total": 1370.0,
+    "checked": "2026-11-25T18:02:06+00:00"
   },
   {
     "provider": "Cosyhome Fuels",
@@ -53,7 +53,7 @@
     "source": "https://cosyhomefuels.com/",
     "litres": 300,
     "total": 435.0,
-    "checked": "2026-11-24T18:57:52+00:00"
+    "checked": "2026-11-25T18:02:07+00:00"
   },
   {
     "provider": "Cosyhome Fuels",
@@ -61,23 +61,23 @@
     "source": "https://cosyhomefuels.com/",
     "litres": 1000,
     "total": 1380.0,
-    "checked": "2026-11-24T18:57:52+00:00"
+    "checked": "2026-11-25T18:02:07+00:00"
   },
   {
     "provider": "Dublin Oil",
     "area": "County Dublin",
     "source": "https://dublinoil.ie/",
     "litres": 300,
-    "total": 470.0,
-    "checked": "2026-11-24T18:57:53+00:00"
+    "total": 450.0,
+    "checked": "2026-11-25T18:02:07+00:00"
   },
   {
     "provider": "Dublin Oil",
     "area": "County Dublin",
     "source": "https://dublinoil.ie/",
     "litres": 500,
-    "total": 720.0,
-    "checked": "2026-11-24T18:57:53+00:00"
+    "total": 715.0,
+    "checked": "2026-11-25T18:02:07+00:00"
   },
   {
     "provider": "Dublin Oil",
@@ -85,54 +85,54 @@
     "source": "https://dublinoil.ie/",
     "litres": 1000,
     "total": 1395.0,
-    "checked": "2026-11-24T18:57:53+00:00"
+    "checked": "2026-11-25T18:02:07+00:00"
   },
   {
     "provider": "Duffy Oils",
     "area": "Parts of Louth, Cavan and Monaghan",
     "source": "https://duffyoils.ie/",
+    "litres": 300,
+    "total": 440.0,
+    "checked": "2026-11-25T18:02:08+00:00"
+  },
+  {
+    "provider": "Duffy Oils",
+    "area": "Parts of Louth, Cavan and Monaghan",
+    "source": "https://duffyoils.ie/",
+    "litres": 500,
+    "total": 700.0,
+    "checked": "2026-11-25T18:02:08+00:00"
+  },
+  {
+    "provider": "Duffy Oils",
+    "area": "Parts of Louth, Cavan and Monaghan",
+    "source": "https://duffyoils.ie/",
+    "litres": 1000,
+    "total": 1350.0,
+    "checked": "2026-11-25T18:02:08+00:00"
+  },
+  {
+    "provider": "KFS Oils",
+    "area": "County Wexford",
+    "source": "https://www.kfsoils.ie/all-products/",
     "litres": 300,
     "total": 450.0,
-    "checked": "2026-11-24T18:57:54+00:00"
-  },
-  {
-    "provider": "Duffy Oils",
-    "area": "Parts of Louth, Cavan and Monaghan",
-    "source": "https://duffyoils.ie/",
-    "litres": 500,
-    "total": 720.0,
-    "checked": "2026-11-24T18:57:54+00:00"
-  },
-  {
-    "provider": "Duffy Oils",
-    "area": "Parts of Louth, Cavan and Monaghan",
-    "source": "https://duffyoils.ie/",
-    "litres": 1000,
-    "total": 1420.0,
-    "checked": "2026-11-24T18:57:54+00:00"
-  },
-  {
-    "provider": "KFS Oils",
-    "area": "County Wexford",
-    "source": "https://www.kfsoils.ie/all-products/",
-    "litres": 300,
-    "total": 466.0,
-    "checked": "2026-11-24T18:57:55+00:00"
+    "checked": "2026-11-25T18:02:10+00:00"
   },
   {
     "provider": "KFS Oils",
     "area": "County Wexford",
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 500,
-    "total": 752.0,
-    "checked": "2026-11-24T18:57:55+00:00"
+    "total": 725.0,
+    "checked": "2026-11-25T18:02:10+00:00"
   },
   {
     "provider": "KFS Oils",
     "area": "County Wexford",
     "source": "https://www.kfsoils.ie/all-products/",
     "litres": 1000,
-    "total": 1483.0,
-    "checked": "2026-11-24T18:57:55+00:00"
+    "total": 1436.0,
+    "checked": "2026-11-25T18:02:10+00:00"
   }
 ]
